@@ -1,0 +1,18 @@
+.outerContainer {
+  border: 1px solid black;
+}
+
+.headerContainer {
+  border: 1px solid red;
+}
+.mainContainer {
+  border: 1px solid greenyellow;
+}
+
+.sideContainer {
+  border: 1px solid blueviolet;
+}
+
+.contentContainer {
+  border: 1px solid violet;
+}
