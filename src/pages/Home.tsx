@@ -1,15 +1,19 @@
-import React from "react";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
+import React from 'react';
+import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
 
-import classes from "./Home.module.css";
-import AppBarComponent from "../components/AppBarComponent";
+import classes from './Home.module.css';
+import AppBarComponent from '../components/AppBarComponent';
+import Side from '../components/SideBarComponent';
+
+import Main from './Main';
 
 const Home = () => {
   return (
     <Container
-      sx={{ marginTop: 5, flexDirection: "column" }}
+      sx={{ marginTop: 1, flexDirection: 'column' }}
       className={classes.outerContainer}
+      maxWidth="lg"
     >
       <Grid container className={classes.headerContainer} marginBottom={2}>
         <Grid item xs={12}>
@@ -18,10 +22,10 @@ const Home = () => {
       </Grid>
       <Grid container spacing={2} className={classes.mainContainer}>
         <Grid item xs={2} className={classes.sideContainer}>
-          side
+          <Side />
         </Grid>
         <Grid item xs={10} className={classes.contentContainer}>
-          main
+          <Main />
         </Grid>
       </Grid>
     </Container>
