@@ -1,12 +1,10 @@
-.mainWrapper {
-  margin: 0;
-  padding: 0;
-}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Roboto+Condensed&display=swap");
+
 .mainHeaderContainer {
   max-width: 900px;
   height: 150px;
   border-radius: 5px;
-  background-image: url('../../public/images/main_header.jpg');
+  background-image: url("../../public/images/main_header.jpg");
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover; /*if doesn't work, try 'contain'*/
@@ -32,15 +30,40 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+  margin-top: 15px;
 }
 
 .dividerText {
-  width: 100px;
+  width: 120px;
   margin-right: 10px;
 }
 .dividerLine {
-  width: 95%;
+  width: 90%;
   margin-right: 10px;
   height: 1px;
   background-color: rgb(187, 181, 181);
+}
+
+.productsListContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.addContainer {
+  max-width: 900px;
+  height: 150px;
+  border-radius: 5px;
+  background-image: url("../../public/images/ad.jpg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: cover; /*if doesn't work, try 'contain'*/
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.addText {
+  font-family: "Sacramento", cursive;
+  font-weight: 100;
 }
