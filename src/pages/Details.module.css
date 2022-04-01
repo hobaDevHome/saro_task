@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;500&display=swap');
+
+.detailsPageContainer {
+}
+.detailsCard {
+  display: flex;
+}
+.detailsDataSection {
+  font-family: 'Spartan', sans-serif;
+}
+
+.prodTitle {
+  font-weight: 400;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+.prodPrice {
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+.amountText {
+  font-size: 16px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.amountValue {
+}
+.amountValue input {
+  font-size: 16px;
+  border: 1px solid violet;
+  border-radius: 3px;
+  outline: none;
+  height: 25px;
+}
+.descriptionTitle {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.descriptionText {
+  font-size: 14px;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+.buttonsDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+.detailsImageSection {
+  /* border: 1px solid violet; */
+}
+.imageBG {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: flex-end;
+  /* border: 1px solid black; */
+}
+.imageBG img {
+  width: auto;
+  height: 600px;
+}
+.image {
+  position: absolute;
+  left: 0px;
+  top: 150px;
+  /* border: 1px solid black; */
+}
+.image img {
+  width: auto;
+  height: 400px;
+}

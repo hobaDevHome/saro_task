@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import ProductCard from "../components/ProductCard";
-import style from "./Main.module.css";
+import { useEffect, useState } from 'react';
+import Container from '@mui/material/Container';
+
+import Typography from '@mui/material/Typography';
+import ProductCard from '../components/ProductCard';
+import style from './Main.module.css';
 
 export type ItemType = {
   id: number;
@@ -19,7 +19,7 @@ const Main = () => {
   const [productsList, setProductsList] = useState([] as ItemType[]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch('https://fakestoreapi.com/products')
       .then((response) => response.json())
 
       .then((data) => setProductsList(data));
@@ -35,9 +35,9 @@ const Main = () => {
           <Typography
             padding={1}
             fontSize={25}
-            variant='subtitle1'
-            component='h2'
-            color={"white"}
+            variant="subtitle1"
+            component="h2"
+            color={'white'}
           >
             SHINOLA‘ S BEST
           </Typography>
@@ -63,9 +63,9 @@ const Main = () => {
           <Typography
             padding={1}
             fontSize={18}
-            variant='subtitle1'
-            component='h2'
-            color={"white"}
+            variant="subtitle1"
+            component="h2"
+            color={'white'}
           >
             HUNTERS RACE
           </Typography>
@@ -73,9 +73,9 @@ const Main = () => {
           <Typography
             padding={1}
             fontSize={16}
-            variant='subtitle1'
-            component='h6'
-            color={"white"}
+            variant="subtitle1"
+            component="h6"
+            color={'white'}
             className={style.addText}
           >
             for love

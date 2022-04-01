@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Roboto+Condensed&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&family=Roboto+Condensed&display=swap');
 
 .mainHeaderContainer {
   max-width: 900px;
   height: 150px;
   border-radius: 5px;
-  background-image: url("../../public/images/main_header.jpg");
+  background-image: url('../../public/images/main_header.jpg');
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover; /*if doesn't work, try 'contain'*/
@@ -52,11 +52,11 @@
   max-width: 900px;
   height: 150px;
   border-radius: 5px;
-  background-image: url("../../public/images/ad.jpg");
+  background-image: url('../../public/images/ad.jpg');
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: 10% 30%;
   background-size: cover; /*if doesn't work, try 'contain'*/
-  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,6 +64,6 @@
 }
 
 .addText {
-  font-family: "Sacramento", cursive;
+  font-family: 'Sacramento', cursive;
   font-weight: 100;
 }
