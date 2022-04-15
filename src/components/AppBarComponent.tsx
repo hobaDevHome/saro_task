@@ -1,6 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
 
 import { Person } from '@mui/icons-material';
 import { AddCard } from '@mui/icons-material';
@@ -27,9 +28,11 @@ const AppBarComponent = () => {
           </Button>
         </Grid>
         <Grid item xs={1}>
-          <Button variant="contained" color="secondary">
-            <ShoppingCart sx={{ width: 25 }} />
-          </Button>
+          <Link to="/cart">
+            <Button variant="contained" color="secondary">
+              <ShoppingCart sx={{ width: 25 }} />
+            </Button>
+          </Link>
         </Grid>
       </Grid>
     </div>

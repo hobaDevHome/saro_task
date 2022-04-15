@@ -1,0 +1,51 @@
+.dividerSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.dividerLine {
+  width: 90%;
+  margin-right: 10px;
+  height: 1px;
+  background-color: rgb(187, 181, 181);
+}
+
+.cartItemContianer {
+  font-family: 'Spartan', sans-serif;
+}
+
+.prodTitle {
+  font-weight: 400;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.prodPrice {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.amountText {
+  font-size: 12px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.amountValue input {
+  font-size: 15px;
+  border: 1px solid violet;
+  border-radius: 3px;
+  outline: none;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.itemImage {
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+  align-self: center;
+}

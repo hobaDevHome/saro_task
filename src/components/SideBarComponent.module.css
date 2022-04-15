@@ -3,3 +3,9 @@
   padding: 10px;
   height: 100%;
 }
+
+.colorsGrid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

@@ -2,9 +2,13 @@ import React from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import { Link, useParams } from 'react-router-dom';
 import style from './Details.module.css';
 
 const ProductDetails = () => {
+  const prodId = useParams();
+  const id = prodId.id;
+  console.log(id);
   return (
     <Container
       sx={{
@@ -22,7 +26,6 @@ const ProductDetails = () => {
           <div className={style.amountText}>
             Amount :{' '}
             <span className={style.amountValue}>
-              {' '}
               <input
                 type="number"
                 id="quantity"
@@ -43,10 +46,14 @@ const ProductDetails = () => {
             et ut doloribus corrupti molestias?
           </div>
           <div className={style.buttonsDiv}>
-            <Button variant="outlined">Back</Button>
-            <Button variant="contained" color="secondary">
-              Go To Cart
-            </Button>
+            <Link to="/">
+              <Button variant="outlined">Back</Button>
+            </Link>
+            <Link to="/cart">
+              <Button variant="contained" color="secondary">
+                Go To Cart
+              </Button>
+            </Link>
           </div>
         </Grid>
         <Grid item xs={6} className={style.detailsImageSection}>

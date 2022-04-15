@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Container from '@mui/material/Container';
+import { Link } from 'react-router-dom';
 
 import Typography from '@mui/material/Typography';
 import ProductCard from '../components/ProductCard';
@@ -49,11 +50,16 @@ const Main = () => {
         <div className={style.dividerText}>Best Selling</div>
         <div className={style.dividerLine}></div>
       </div>
+
       {/* /////////////////best selling products list /////////////// */}
       <div className={style.productsListContainer}>
-        {productsList.map((prod, index) => (
-          <ProductCard prod={prod} key={index} />
-        ))}
+        {productsList.map((prod, index) => {
+          return (
+            <Link to={`/${prod.id}`}>
+              <ProductCard prod={prod} key={index} />
+            </Link>
+          );
+        })}
       </div>
 
       {/* //////////// footer ad /////////////// */}

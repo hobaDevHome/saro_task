@@ -1,0 +1,43 @@
+.dividerSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+
+.dividerLine {
+  width: 90%;
+  margin-right: 10px;
+  height: 1px;
+  background-color: rgb(187, 181, 181);
+}
+.cartContianer {
+}
+.cartSummary {
+  background-color: rgb(244, 231, 247);
+}
+.cartSummary {
+}
+.summaryTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.summaryItemContiner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+.summaryItemText {
+}
+.summaryItemValue {
+}
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

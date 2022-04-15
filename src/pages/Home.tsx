@@ -7,6 +7,7 @@ import AppBarComponent from '../components/AppBarComponent';
 import Side from '../components/SideBarComponent';
 
 import Main from './Main';
+import MainContainer from './MainContiner';
 
 const Home = () => {
   return (
@@ -25,7 +26,7 @@ const Home = () => {
           <Side />
         </Grid>
         <Grid item xs={10} className={style.contentContainer}>
-          <Main />
+          <MainContainer />
         </Grid>
       </Grid>
     </Container>
