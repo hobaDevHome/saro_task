@@ -1,14 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import FormControl, { useFormControl } from '@mui/material/FormControl';
 import { Link, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 import style from './Details.module.css';
 
+export type ItemType = {
+  id: string;
+  category: string;
+  description: string;
+  image: string;
+  price: number;
+  title: string;
+  amount: number;
+};
+
 const ProductDetails = () => {
-  const prodId = useParams();
-  const id = prodId.id;
-  console.log(id);
+  const [itemCount, setItemCount] = useState(1);
+  const { id } = useParams();
+  const productsList = useSelector((state: any) => state.products.products);
+
+  const item = productsList.find((product: ItemType) => product.id == id);
+
+  // console.log('productsList', productsList);
+
+  // console.log('item', item);
+  const changeCountHandler = (event: any) => {
+    setItemCount(event.target.value);
+    console.log(itemCount);
+  };
   return (
     <Container
       sx={{
@@ -19,49 +43,47 @@ const ProductDetails = () => {
     >
       <Grid container spacing={0} className={style.detailsCard} marginTop={1}>
         <Grid item xs={6} className={style.detailsDataSection}>
-          <div className={style.prodTitle}>
-            Balance Beam Oil Control Moisturizer
-          </div>
-          <div className={style.prodPrice}>$14.88</div>
+          <div className={style.prodTitle}>{item.title}</div>
+          <div className={style.prodPrice}>${item.price}</div>
           <div className={style.amountText}>
             Amount :{' '}
-            <span className={style.amountValue}>
-              <input
+            <form>
+              <TextField
+                id="number"
+                label=""
                 type="number"
-                id="quantity"
-                name="quantity"
-                min="1"
-                max="5"
-              ></input>
-            </span>
+                style={{ marginTop: 10, width: 80 }}
+                color="secondary"
+                value={itemCount}
+                onChange={(event) => changeCountHandler(event)}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+              />
+            </form>
           </div>
           <div className={style.amountText}>
-            Price : <span className={style.amountValue}>$100</span>
+            Price :
+            <span className={style.amountValue}>
+              $ {itemCount * item.price}
+            </span>
           </div>
           <div className={style.descriptionTitle}>Description</div>
-          <div className={style.descriptionText}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt
-            eaque quos velit nihil dicta sapiente inventore expedita sed
-            reprehenderit repellat quaerat, delectus mollitia dignissimos rerum
-            et ut doloribus corrupti molestias?
-          </div>
+          <div className={style.descriptionText}>{item.description}</div>
           <div className={style.buttonsDiv}>
-            <Link to="/">
+            <Link to="/" className={style.linking}>
               <Button variant="outlined">Back</Button>
             </Link>
-            <Link to="/cart">
-              <Button variant="contained" color="secondary">
-                Go To Cart
-              </Button>
-            </Link>
+            {/* <Link to="/cart" className={style.linking}> */}
+            <Button variant="contained" color="secondary">
+              Add To Cart
+            </Button>
+            {/* </Link> */}
           </div>
         </Grid>
-        <Grid item xs={6} className={style.detailsImageSection}>
-          <div className={style.imageBG}>
-            <img src="./images/imgBG.jpg" alt="" />
-            <div className={style.image}>
-              <img src="./images/prodT.png" alt="" />
-            </div>
+        <Grid item xs={6}>
+          <div className={style.imgSection}>
+            <img src={item.image} alt="" />
           </div>
         </Grid>
       </Grid>

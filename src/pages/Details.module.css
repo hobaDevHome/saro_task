@@ -50,27 +50,22 @@
   justify-content: space-around;
   margin-bottom: 40px;
 }
-.detailsImageSection {
-  /* border: 1px solid violet; */
-}
-.imageBG {
+
+.imgSection {
   display: flex;
   position: relative;
   flex-direction: row;
   justify-content: flex-end;
   /* border: 1px solid black; */
 }
-.imageBG img {
+
+.imgSection img {
   width: auto;
-  height: 600px;
+  height: 450px;
 }
-.image {
-  position: absolute;
-  left: 0px;
-  top: 150px;
-  /* border: 1px solid black; */
-}
-.image img {
-  width: auto;
-  height: 400px;
+
+.linking {
+  text-decoration: none;
+  /* color: black; */
+  text-align: center;
 }

@@ -67,3 +67,9 @@
   font-family: 'Sacramento', cursive;
   font-weight: 100;
 }
+
+.linking {
+  text-decoration: none;
+  color: black;
+  text-align: center;
+}

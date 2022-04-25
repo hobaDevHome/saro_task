@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import Container from '@mui/material/Container';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchProdcuts } from '../store/actions';
 
 import Typography from '@mui/material/Typography';
 import ProductCard from '../components/ProductCard';
@@ -17,16 +19,14 @@ export type ItemType = {
 };
 
 const Main = () => {
-  const [productsList, setProductsList] = useState([] as ItemType[]);
+  const productsList = useSelector((state: any) => state.products.products);
+  const dispatch = useDispatch();
+  // console.log('cat', productsList);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then((response) => response.json())
+    dispatch(fetchProdcuts());
+  }, [dispatch]);
 
-      .then((data) => setProductsList(data));
-  }, []);
-
-  console.log(productsList);
   return (
     <Container sx={{ marginTop: 1 }}>
       {/* //////////////// header /////////////////// */}
@@ -53,13 +53,14 @@ const Main = () => {
 
       {/* /////////////////best selling products list /////////////// */}
       <div className={style.productsListContainer}>
-        {productsList.map((prod, index) => {
-          return (
-            <Link to={`/${prod.id}`}>
-              <ProductCard prod={prod} key={index} />
-            </Link>
-          );
-        })}
+        {productsList.length > 0 &&
+          productsList.map((prod: ItemType, index: number) => {
+            return (
+              <Link to={`/${prod.id}`} className={style.linking}>
+                <ProductCard key={prod.id} prod={prod} />
+              </Link>
+            );
+          })}
       </div>
 
       {/* //////////// footer ad /////////////// */}

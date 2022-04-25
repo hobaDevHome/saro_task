@@ -9,12 +9,13 @@ import './index.css';
 import App from './App';
 
 const store = createStore(reducers, applyMiddleware(thunk));
+// const store = createStore(reducers);
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
+  <Provider store={store}>
+    <BrowserRouter>
       <App />
-    </Provider>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root')
 );

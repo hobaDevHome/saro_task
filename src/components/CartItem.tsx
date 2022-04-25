@@ -2,9 +2,19 @@ import React, { useState } from 'react';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import CloseIcon from '@mui/icons-material/Close';
-import Paper from '@mui/material/Paper';
-import style from './CartItem.module.css';
 
+import style from './CartItem.module.css';
+interface Prodcut {
+  id: number;
+  category: string;
+  description: string;
+  image: string;
+  price: number;
+  title: string;
+  amount: number;
+}
+
+// const CartItem: React.FC<{ prod: Prodcut }> = (props) => {
 const CartItem = () => {
   const [itemCount, setItemCount] = useState(1);
   return (
