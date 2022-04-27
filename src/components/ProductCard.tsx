@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
 import { createTheme, ThemeProvider } from '@mui/material';
+import { useSelector } from 'react-redux';
 
-import classes from './ProductCard.module.css';
+import style from './ProductCard.module.css';
 import AddToCartButton from './AddToCartButton';
+import ChangeAmount from './ChangeAmount';
 
 const theme = createTheme({
   components: {
@@ -37,19 +39,35 @@ interface Prodcut {
 }
 
 const ProductCard: React.FC<{ prod: Prodcut }> = (props) => {
-  // const { id } = useParams();
   const [cssTest, setCssTest] = useState(false);
+  const [inCartFlag, setInCartFlag] = useState(true);
 
+  const cartItems = useSelector((state: any) => state.products.cartItems);
+  // console.log('cartitems list', cartItems);
+
+  const changeCountHandler = () => {
+    console.log('test');
+  };
+
+  useEffect(() => {
+    const flag = checkIfInCart(props.prod.id);
+    setInCartFlag(flag);
+  }, []);
+
+  const checkIfInCart = (itemId: number) => {
+    const foundItem = cartItems.find((item: any) => item.id === itemId);
+    return foundItem !== undefined;
+  };
   return (
     <ThemeProvider theme={theme}>
-      <Paper elevation={3} className={classes.paper}>
-        <img
-          src={props.prod.image}
-          alt="product"
-          className={`${classes.cardImage} ${
-            cssTest && classes.cardImageBorder
-          }`}
-        />
+      <Paper elevation={3} className={style.paper}>
+        <Link to={`/${props.prod.id}`} className={style.linking}>
+          <img
+            src={props.prod.image}
+            alt="product"
+            className={`${style.cardImage} ${cssTest && style.cardImageBorder}`}
+          />
+        </Link>
 
         <Box paddingX={0}>
           <Box
@@ -97,7 +115,14 @@ const ProductCard: React.FC<{ prod: Prodcut }> = (props) => {
               ${props.prod.price}
             </Typography>
 
-            <AddToCartButton />
+            {!inCartFlag ? (
+              <AddToCartButton />
+            ) : (
+              <ChangeAmount
+                itemCount={1}
+                changeCountHandler={changeCountHandler}
+              />
+            )}
           </Box>
         </Box>
       </Paper>

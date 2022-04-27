@@ -55,11 +55,7 @@ const Main = () => {
       <div className={style.productsListContainer}>
         {productsList.length > 0 &&
           productsList.map((prod: ItemType, index: number) => {
-            return (
-              <Link to={`/${prod.id}`} className={style.linking}>
-                <ProductCard key={prod.id} prod={prod} />
-              </Link>
-            );
+            return <ProductCard key={prod.id} prod={prod} />;
           })}
       </div>
 
